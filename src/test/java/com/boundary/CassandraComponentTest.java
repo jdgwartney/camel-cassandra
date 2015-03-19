@@ -21,7 +21,8 @@ public class CassandraComponentTest extends CamelTestSupport {
             public void configure() {
                 from("cassandra://foo")
                   .to("cassandra://bar")
-                  .to("mock:result");
+                  .to("mock:result")
+                  .to("stream:out");
             }
         };
     }
